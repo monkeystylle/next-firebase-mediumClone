@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import styled from 'styled-components';
 import type { NextPage } from 'next';
+import Link from 'next/link';
+import Loader from '../components/Loader';
 
 const Home: NextPage = () => {
   return (
@@ -12,7 +14,16 @@ const Home: NextPage = () => {
       </Head>
       <Main>
         <Title>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          <Link
+            prefetch={false}
+            href={{
+              pathname: '/[username]',
+              query: { username: 'jeffd23' },
+            }}
+          >
+            Jeffs Profile
+          </Link>
+          <Loader show={false} />
         </Title>
       </Main>
     </>
