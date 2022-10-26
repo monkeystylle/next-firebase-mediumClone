@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import type { NextPage } from 'next';
 import Link from 'next/link';
 import Loader from '../components/Loader';
+import toast from 'react-hot-toast';
 
 const Home: NextPage = () => {
   return (
@@ -25,6 +26,7 @@ const Home: NextPage = () => {
           </Link>
           <Loader show={false} />
         </Title>
+        <button onClick={() => toast.success('hello toast')}>Toast Me</button>
       </Main>
     </>
   );
@@ -33,7 +35,6 @@ const Home: NextPage = () => {
 const Main = styled.main`
   display: grid;
   place-content: center;
-  height: calc(100vh - 56px);
 `;
 
 const Title = styled.h1`
